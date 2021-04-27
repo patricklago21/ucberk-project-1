@@ -2,7 +2,7 @@
 
 1. [ Description. ](#desc)
 2. [ Follow the Link. ](#urlz)
-3. [ iDorei Demo. ](#demo)
+3. [ Marine Health Spy Demo. ](#demo)
 4. [ User Story. ](#story)
 5. [ Acceptance Criteria. ](#ac)
 
