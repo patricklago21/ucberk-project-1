@@ -1,9 +1,9 @@
 # Marine Health Spy by PANN
 
-API's used: 
-StormGlass (Marine Weather): https://stormglass.io/marine-weather/
-Gyphy: https://developers.giphy.com/docs/sdk
-Current News: https://newsapi.org/
+## API's used: 
+## StormGlass (Marine Weather): https://stormglass.io/marine-weather/
+## Gyphy: https://developers.giphy.com/docs/sdk
+## Current News: https://newsapi.org/
 
 1. [ Description. ](#desc)
 2. [ Follow the Link. ](#urlz)
