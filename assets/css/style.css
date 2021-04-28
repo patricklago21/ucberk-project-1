@@ -1,0 +1,19 @@
+body {
+    padding: 10px;
+}
+
+.ul-element {
+    list-style: none;
+}
+
+.marine-stats-div, .contributors {
+    margin-top: 23px;
+}
+
+button {
+    margin-top: 10px;
+}
+
+.hero-description {
+    margin-bottom: 10px;
+}

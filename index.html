@@ -4,9 +4,96 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Marine Health by PANN</title>
 </head>
+
 <body>
+    <!-- header -->
+    <nav class="navbar" role="navigation">
+        <div class="navbar-start">
+            <h1 class="title is-2">Marine Health</h1>
+        </div>
+
+        <div class="navbar-end">
+            <h3 class="subtitle is-3">Created by Team PANN</h3>
+        </div>
+    </nav>
+
+    <!-- hero with search -->
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="has-text-centered">
+                <p class="title hero-description">Receive the Lastest Information on Your Coastline's Health</p>
+            </div>
+            <div class="field">
+                <div class="control has-text-centered">
+                    <textarea class="textarea is-primary" placeholder="Search your city here"></textarea>
+                    <button type="submit" class="button is-primary is-light">Search</button>
+                </div>
+            </div>
+            <div class="has-text-centered ul-element">
+                <li>Searched Cities</li>
+            </div>
+        </div>
+    </section>
+
+    <!-- api elements -->
+    <section>
+        <div class="columns">
+            <!-- marine stats -->
+            <div class="column is-full marine-stats-div">
+                <div class="card has-background-grey-lighter">
+                    <header class="card-header">
+                        <p class="card-header-title">
+                            Marine Stats
+                        </p>
+                    </header>
+
+                    <div class="card-content">
+                        <div class="content">
+                            <ul>
+                                <li>Temperature <span>--</span></li>
+                                <li>Sea Level <span>--</span></li>
+                                <li>Phytoplankton <span>--</span></li>
+                                <li>Currents Direction <span>--</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="columns">
+            <!-- current news -->
+            <div class="column is-full">
+                <div class="card has-background-grey-lighter">
+                    <header class="card-header">
+                        <p class="card-header-title">
+                            Current News
+                        </p>
+                    </header>
+
+                    <div class="card-content">
+                        <div class="content">Content</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hero class="hero is-small is-primary contributors">
+        <div class="hero-body has-text-centered">
+            <p class="title">
+                Contribtors:
+            </p>
+            <p class="subtitle">
+                Abel Martinez, Nell-E Medina, Nicolas Obado, Patrick Lago
+            </p>
+        </div>
+    </hero>
     
+
 </body>
 </html>
