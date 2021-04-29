@@ -1,10 +1,6 @@
 var apiKey = "89c81292-a891-11eb-80d0-0242ac130002-89c8130a-a891-11eb-80d0-0242ac130002";
-var currentDirection = "currentDirection";
-var seaLevel = "seaLevel";
-var temperature = "waterTemperature";
-var plankton = "phytoplankton";
-var salinity = "salinity";
 var searchCityForm = ("#searchCityForm");
+
 
 
 var cityInfoPull = function(searchCityName) {
@@ -16,12 +12,12 @@ var cityInfoPull = function(searchCityName) {
                 $("#cityName").html(response.name);
 
                 var lat = response.coord.lat;
-                var lon = response.coord.lon;
+                var lng = response.coord.lon;
 
-                // uvPull(lat, lon);
+                weatherPull(lat, lng);
                 // forecastPull(lat, lon);
                 console.log(lat);
-                console.log(lon);
+                console.log(lng);
             });
         } else {
             alert("Please enter a valid city name.");
@@ -29,7 +25,18 @@ var cityInfoPull = function(searchCityName) {
     });
 };
 
+var weatherPull = function(lat, lng) {
+    var params = "waterTemperature"
 
+    fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}`, {
+        headers: {
+            'Authorization': '89c81292-a891-11eb-80d0-0242ac130002-89c8130a-a891-11eb-80d0-0242ac130002'
+        }}).then(function(response) {
+            response.json().then(function(data){
+            console.log(data);
+        });
+    });
+};
 
 var formSubmitEvent = function(event) {
     event.preventDefault();
@@ -37,8 +44,8 @@ var formSubmitEvent = function(event) {
     var searchCityName = $("#searchCity").val().trim();
     cityInfoPull(searchCityName);
     // add local storage here later
-}
+};
 
 $("#searchCityForm").on("submit", function() {
     formSubmitEvent(event);
-})
+});
