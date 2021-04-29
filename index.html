@@ -28,10 +28,12 @@
                 <p class="title hero-description">Receive the Lastest Information on Your Coastline's Health</p>
             </div>
             <div class="field">
-                <div class="control has-text-centered">
-                    <textarea class="textarea is-primary" placeholder="Search your city here"></textarea>
-                    <button type="submit" class="button is-primary is-light">Search</button>
-                </div>
+                <form id="searchCityForm">
+                    <div class="control has-text-centered" id="searchForm">
+                        <textarea class="textarea is-primary" placeholder="Search your city here" id="searchCity"></textarea>
+                        <button type="submit" class="button is-primary is-light" id="searchButton">Search</button>
+                    </div>
+                </form> 
             </div>
             <div class="has-text-centered ul-element">
                 <li>Searched Cities</li>
@@ -53,7 +55,7 @@
 
                     <div class="card-content">
                         <div class="content">
-                            <span>City</span>
+                            <span id="cityName">City</span>
                             <ul>
                                 <li>Temperature <span>--</span></li>
                                 <li>Sea Level <span>--</span></li>
@@ -95,6 +97,8 @@
         </div>
     </hero>
     
-
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script src="./assets/javascript/script.js"></script>
 </body>
 </html>
