@@ -1,5 +1,12 @@
 # Marine Health Spy by PANN
 
+## API's used: 
+## StormGlass (Marine Weather): https://stormglass.io/marine-weather/
+## Gyphy: https://developers.giphy.com/docs/sdk
+## Current News: https://newsapi.org/
+
+## Presentation: https://drive.google.com/file/d/1lJCCZi-5PSRKZP-35faidpwi9U14VTCl/view?usp=sharing
+
 1. [ Description. ](#desc)
 2. [ Follow the Link. ](#urlz)
 3. [ Marine Health Spy Demo. ](#demo)
@@ -23,11 +30,11 @@ The Marine Health Spy application is designed to...
 
 <a name="story"></a>
 ## User Story
-AS AN advocate for the protection of the marine life and the land around it
+AS AN advocate for the protection of marine life and the land around it
 
 I WANT to understand the marine weather conditions in major areas of the world
 
-SO THAT I can help spread awareness on the health of the world and find ways to make it sustainable for the next generations of children.
+SO THAT I can help spread awareness on the health of the world and find ways to make it sustainable for the next generations.
 
 
 
