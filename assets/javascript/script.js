@@ -26,15 +26,17 @@ var cityInfoPull = function(searchCityName) {
 };
 
 var weatherPull = function(lat, lng) {
-    var params = "waterTemperature"
-
+    var params = "waterTemperature,seaLevel"
     fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}`, {
-        headers: {
-            'Authorization': '89c81292-a891-11eb-80d0-0242ac130002-89c8130a-a891-11eb-80d0-0242ac130002'
-        }}).then(function(response) {
-            response.json().then(function(data){
-            console.log(data);
-        });
+    headers: {
+    'Authorization': '89c81292-a891-11eb-80d0-0242ac130002-89c8130a-a891-11eb-80d0-0242ac130002'
+    }
+    }).then((response) => response.json()).then((jsonData) => {
+        console.log(jsonData);
+        // path for seaLevel
+        console.log(jsonData.hours[12].seaLevel.meto) 
+        // path for waterTemperature
+        console.log(jsonData.hours[12].waterTemperature.noaa)
     });
 };
 
