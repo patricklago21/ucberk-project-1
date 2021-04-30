@@ -1,4 +1,4 @@
-# Marine Health Spy by PANN
+# Marine Health by PAN
 
 ## API's used: 
 ## StormGlass (Marine Weather): https://stormglass.io/marine-weather/
