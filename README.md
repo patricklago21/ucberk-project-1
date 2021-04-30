@@ -3,7 +3,7 @@
 ## API's used: 
 ## StormGlass (Marine Weather): https://stormglass.io/marine-weather/
 ## Gyphy: https://developers.giphy.com/docs/sdk
-## Current News: https://newsapi.org/ -- apiKey: d33f4d26b4e74fe083a4dacb018f86ce
+## Current News: https://open-platform.theguardian.com/
 
 ## Presentation: https://drive.google.com/file/d/1lJCCZi-5PSRKZP-35faidpwi9U14VTCl/view?usp=sharing
 
