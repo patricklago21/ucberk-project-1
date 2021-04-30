@@ -1,7 +1,4 @@
-var apiKey = "89c81292-a891-11eb-80d0-0242ac130002-89c8130a-a891-11eb-80d0-0242ac130002";
 var searchCityForm = ("#searchCityForm");
-
-
 
 var cityInfoPull = function(searchCityName) {
     console.log(searchCityName);
@@ -15,7 +12,6 @@ var cityInfoPull = function(searchCityName) {
                 var lng = response.coord.lon;
 
                 weatherPull(lat, lng);
-                // forecastPull(lat, lon);
                 console.log(lat);
                 console.log(lng);
             });
@@ -26,17 +22,27 @@ var cityInfoPull = function(searchCityName) {
 };
 
 var weatherPull = function(lat, lng) {
-    var params = "waterTemperature,seaLevel"
+    var params = "waterTemperature,windSpeed,airTemperature,visibility"
     fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}`, {
     headers: {
     'Authorization': '89c81292-a891-11eb-80d0-0242ac130002-89c8130a-a891-11eb-80d0-0242ac130002'
     }
     }).then((response) => response.json()).then((jsonData) => {
-        console.log(jsonData);
-        // path for seaLevel
-        console.log(jsonData.hours[12].seaLevel.meto) 
-        // path for waterTemperature
-        console.log(jsonData.hours[12].waterTemperature.noaa)
+        console.log(jsonData)
+        $("#windSpeed").text(jsonData.hours[12].windSpeed.noaa + " m/s")
+        $("#waterTemp").text(jsonData.hours[12].waterTemperature.noaa + " ºC")
+        $("#airTemp").text(jsonData.hours[12].airTemperature.noaa + " ºC")
+        $("#visibility").text(jsonData.hours[12].visibility.noaa + " km")
+
+    });
+};
+
+var newsPull = function(searchCityName) {
+    console.log("newsPull working!!");
+    var apiKey = "5bfa4270-0651-4c74-bf63-b6dece86fc3e";
+    fetch('https://content.guardianapis.com/search?q=' + searchCityName + '&tag=environment/environment&from-date=2014-01-01&api-key=' + apiKey)
+    .then((response) => response.json()).then((jsonData) => {
+            console.log(jsonData)
     });
 };
 
@@ -45,7 +51,8 @@ var formSubmitEvent = function(event) {
 
     var searchCityName = $("#searchCity").val().trim();
     cityInfoPull(searchCityName);
-    // add local storage here later
+    newsPull(searchCityName);
+
 };
 
 $("#searchCityForm").on("submit", function() {
