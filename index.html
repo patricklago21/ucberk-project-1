@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Marine Health by PANN</title>
 </head>
@@ -90,18 +91,23 @@
         </div>
     </section>
 
+    <section class="temperaturechart">
+        <canvas id="chart" width="1000" height="400"></canvas>
+    </section>
+
     <hero class="hero is-small is-primary contributors">
         <div class="hero-body has-text-centered">
             <p class="title">
-                Contribtors:
+                Contributors:
             </p>
             <p class="subtitle">
-                Abel Martinez, Nell-E Medina, Nicolas Obado, Patrick Lago
+                Abel Martinez, Nell-E Medina, Patrick Lago
             </p>
         </div>
     </hero>
     
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./assets/javascript/tempchart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
     <script src="./assets/javascript/script.js"></script>
 </body>
