@@ -1,6 +1,6 @@
 
 // Making a map and tiles
-// import {lat, lng} from './script.js';
+
 const mymap = L.map('issMap').setView([0, 0], 1);
 const attribution =
     '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>';
@@ -28,6 +28,7 @@ async function getISS(lat, lng) {
     //  const data = await response.json();
     // const { latitude, longitude } = data
     // pulling lat and lng values from the script.js to draw the map
+    import {lat, lng} from './script.js';
     // marker.setLatLng([lat, lng]);
     if (firstTime) {
         mymap.setView([ lat, lng], 2);

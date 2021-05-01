@@ -12,9 +12,10 @@ var cityInfoPull = function(searchCityName) {
                 var lng = response.coord.lon;
 
                 weatherPull(lat, lng);
-                mapp(lat, lng);
                 console.log(lat);
                 console.log(lng);
+                mapp(lat, lng);
+                
             });
         } else {
             alert("Please enter a valid city name.");
@@ -55,65 +56,66 @@ var formSubmitEvent = function(event) {
 };
 
 var mapp = function(lat, lng) {
-            // Making a map and tiles
-            const mymap = L.map('issMap').setView([0, 0], 1);
-            const attribution =
-                '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>';
+        // Making a map and tiles
 
-            const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-            const tiles = L.tileLayer(tileUrl, { attribution });
-            tiles.addTo(mymap);
+        const mymap = L.map('issMap').setView([0, 0], 1);
+        const attribution =
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>';
 
-            
-            
-            // Making a marker with a custom icon
-            const issIcon = L.icon({
-                iconUrl: 'iss.png',
-                iconSize: [50, 32],
-                iconAnchor: [25, 16]
-            });
-            const marker = L.marker([0,0], { icon: issIcon }).addTo(mymap);
+        const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+        const tiles = L.tileLayer(tileUrl, { attribution });
+        tiles.addTo(mymap);
 
-            const api_url = 'https://api.wheretheiss.at/v1/satellites/25544';
+        // Making a marker with a custom icon
+        // const issIcon = L.icon({
+        //     iconUrl: 'iss.png',
+        //     iconSize: [50, 32],
+        //     iconAnchor: [25, 16]
+        // });
+        const marker = L.marker([0,0]).addTo(mymap);
 
-            let firstTime = true;
+        // const api_url = 'https://api.wheretheiss.at/v1/satellites/25544';
 
-            async function getISS() {
-                const response = await fetch(api_url);
-                const data = await response.json();
-                const { lat, lng } = data;
+        let firstTime = true;
 
-                marker.setLatLng([lat, lng]);
-                if (firstTime) {
-                    mymap.setView([ lat, lng], 2);
-                    firstTime = false;
-                }
-                
-                // var circle = L.circle([latitude, longitude], {
-                //     color: 'red',
-                //     fillColor: '#f03',
-                //     fillOpacity: 0.5,
-                //     radius: 500
-                // }).addTo(mymap);
+        async function getISS() {
+            // const response = await fetch(api_url);
+            // const data = await response.json();
+            // const { latitude, longitude } = data;
 
-                var popup = L.popup();
-
-                function onMapClick(e) {
-                    popup
-                        .setLatLng(e.latlng)
-                        .setContent("You clicked the map at " + e.latlng.toString())
-                        .openOn(mymap);
-                }
-                    
-                    mymap.on('click', onMapClick);
-            
-
-                document.getElementById('lat').textContent = lat;
-                document.getElementById('lon').textContent = lng;
-
+            marker.setLatLng([lat, lng]);
+            if (firstTime) {
+                mymap.setView([ lat, lng], 2);
+                firstTime = false;
             }
-            getISS();
+            
+            // var circle = L.circle([latitude, longitude], {
+            //     color: 'red',
+            //     fillColor: '#f03',
+            //     fillOpacity: 0.5,
+            //     radius: 500
+            // }).addTo(mymap);
+
+            var popup = L.popup();
+
+            function onMapClick(e) {
+                popup
+                    .setLatLng(e.latlng)
+                    .setContent("You clicked the map at " + e.latlng.toString())
+                    .openOn(mymap);
+            }
+                
+                mymap.on('click', onMapClick);
+        
+    
+            document.getElementById('lat').textContent = lat;
+            document.getElementById('lon').textContent = lng;
+
+        }
+        getISS();
+        // setInterval(getISS, 3000);
 }
+
 
 $("#searchCityForm").on("submit", function() {
     formSubmitEvent(event);
