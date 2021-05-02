@@ -60,7 +60,7 @@ var createDiv = function(jsonData) {
 
         articleLink.append(articleTitle);
         $("#news-list").append(articleLink);
-    }
+    } 
 }
 
 var formSubmitEvent = function(event) {
