@@ -37,14 +37,31 @@ var weatherPull = function(lat, lng) {
     });
 };
 
+// pulling JSON data from Guardian
 var newsPull = function(searchCityName) {
     console.log("newsPull working!!");
     var apiKey = "5bfa4270-0651-4c74-bf63-b6dece86fc3e";
     fetch('https://content.guardianapis.com/search?q=' + searchCityName + '&tag=environment/environment&from-date=2014-01-01&api-key=' + apiKey)
     .then((response) => response.json()).then((jsonData) => {
-            console.log(jsonData)
+            console.log(jsonData);
+            createDiv(jsonData);
     });
 };
+
+var createDiv = function(jsonData) {
+    for(var i=0; i<5; i++) {
+        var articleTitle = document.createElement("li");
+        articleTitle.id = 'headline' + i;
+        articleTitle.innerText = jsonData.response.results[i].webTitle;
+
+        var articleLink = document.createElement("a");
+        articleLink.id = 'link' + i;
+        articleLink.href = jsonData.response.results[i].webUrl;
+
+        articleLink.append(articleTitle);
+        $("#news-list").append(articleLink);
+    }
+}
 
 var formSubmitEvent = function(event) {
     event.preventDefault();
