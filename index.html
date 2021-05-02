@@ -5,25 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
-
-    <!-- Adding leaflet api for the map-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
     crossorigin=""/>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
-
-    <link rel="stylesheet" href="./assets/css/style.css">
-    
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
-
-    <!-- Adding leaflet api for the map-->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
     crossorigin=""></script>
-
-    <title>Marine Health by PAN</title>
+    
+    <style>
+        #issMap {
+            height: 360px;
+        }
+    </style>
+    <title>Marine Health by PANN</title>
 </head>
 
 <body>
@@ -36,7 +33,7 @@
         </div>
 
         <div class="navbar-end">
-            <h3 class="subtitle is-3">Created by Team PAN</h3>
+            <h3 class="subtitle is-3">Created by Team PANN</h3>
         </div>
     </nav>
     </div>
@@ -46,13 +43,15 @@
     <section class="hero is-primary">
         <div class="hero-body">
             <div class="has-text-centered">
-                <p class="title hero-description">Receive the Latest Information About Your Coastline's Health</p>
+                <p class="title hero-description">Receive the Lastest Information on Your Coastline's Health</p>
             </div>
             <div class="field">
-                <div class="control has-text-centered">
-                    <textarea class="textarea is-primary" placeholder="Search Cities"></textarea>
-                    <button type="submit" class="button is-primary is-light">Search</button>
-                </div>
+                <form id="searchCityForm">
+                    <div class="control has-text-centered" id="searchForm">
+                        <textarea class="textarea is-primary" placeholder="Search your city here" id="searchCity"></textarea>
+                        <button type="submit" class="button is-primary is-light" id="searchButton">Search</button>
+                    </div>
+                </form> 
             </div>
             <div class="has-text-centered ul-element">
                 <li>Searched Cities</li>
@@ -98,23 +97,24 @@
                     </header>
 
                     <div class="card-content">
-                        <div class="content">Content</div>
+                        <div id="content"></div>
                     </div>
                 </div>
             </div>
         </div>
+
     </section>
 
     <section class="temperaturechart">
         <canvas id="chart" width="1000" height="400"></canvas>
     </section>
 
-    <section class="themap">
-        <p>latitude: <span id="lat"></span>°<br />
+    <section class="mapp">
+        <h1>City Location on Map?</h1><br/>
+        <p>latitude: <span id="lat"></span>°<br/>
             longitude: <span id="lon"></span>°
         </p>
-    
-        <canvas id="issMap"></canvas>
+        <div id="issMap"></div>
     </section>
 
     <hero class="hero is-small is-primary contributors">
@@ -123,13 +123,14 @@
                 Contributors:
             </p>
             <p class="subtitle">
-                Patrick Lago, Abel Martinez, Nell-E Medina
+                Abel Martinez, Nell-E Medina, Patrick Lago
             </p>
         </div>
     </hero>
-
     
-    <script src="assets/javascript/tempchart.js"></script>
-    <script src="assets/javascript/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./assets/javascript/tempchart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script src="./assets/javascript/script.js"></script>
 </body>
 </html>
