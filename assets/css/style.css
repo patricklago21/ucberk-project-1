@@ -5,7 +5,7 @@
 
 /* Start Header/Nav-Bar */
 .header {
-    background-color: #14b5e6;
+    background-color: #1d72aa;
     padding: 10px 25px;
 }
 
@@ -17,7 +17,7 @@
 }
 
 .navbar {
-    background-color:  #14b5e6;
+    background-color:  #1d72aa;
 }
 /* End Header */
 
@@ -41,7 +41,7 @@ button {
     margin-bottom: 10px;
 }
 
-.hero-body {
+.footer-style {
     background-image: url("../images/hero.jpg");
     background-size: cover;
     background-position: center;

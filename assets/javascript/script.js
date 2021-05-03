@@ -16,7 +16,7 @@ var cityInfoPull = function(searchCityName) {
                 console.log(lng);
             });
         } else {
-            alert("Please enter a valid city name.");
+            $("#warning").text("Please enter a valid city name!");
         }
     });
 };
@@ -28,7 +28,6 @@ var weatherPull = function(lat, lng) {
     'Authorization': '89c81292-a891-11eb-80d0-0242ac130002-89c8130a-a891-11eb-80d0-0242ac130002'
     }
     }).then((response) => response.json()).then((jsonData) => {
-        console.log(jsonData)
         $("#windSpeed").text(jsonData.hours[12].windSpeed.noaa + " m/s")
         $("#waterTemp").text(jsonData.hours[12].waterTemperature.noaa + " ºC")
         $("#airTemp").text(jsonData.hours[12].airTemperature.noaa + " ºC")
@@ -39,7 +38,6 @@ var weatherPull = function(lat, lng) {
 
 // pulling JSON data from Guardian
 var newsPull = function(searchCityName) {
-    console.log("newsPull working!!");
     var apiKey = "5bfa4270-0651-4c74-bf63-b6dece86fc3e";
     fetch('https://content.guardianapis.com/search?q=' + searchCityName + '&tag=environment/environment&from-date=2014-01-01&api-key=' + apiKey)
     .then((response) => response.json()).then((jsonData) => {
