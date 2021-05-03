@@ -23,10 +23,6 @@ body {
     padding: 0px;
 }
 
-.ul-element {
-    list-style: none;
-}
-
 .marine-stats-div, .contributors {
     margin-top: 23px;
 }
@@ -49,6 +45,6 @@ button {
     margin: 5px;
 }
 
-.hide {
-    display: none;
+.statsList {
+    list-style: none;
 }
