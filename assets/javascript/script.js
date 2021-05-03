@@ -1,7 +1,4 @@
-var searchCityForm = ("#searchCityForm");
-
 var cityInfoPull = function(searchCityName) {
-    console.log(searchCityName);
     fetch('https://api.openweathermap.org/data/2.5/weather?q=' + searchCityName + '&appid=b4e179a8b169927bbbf8d46d7054d6b7')
     .then (function(response) {
         if (response.ok) {
@@ -12,8 +9,6 @@ var cityInfoPull = function(searchCityName) {
                 var lng = response.coord.lon;
 
                 weatherPull(lat, lng);
-                console.log(lat);
-                console.log(lng);
             });
         } else {
             $("#warning").text("Please enter a valid city name!");
@@ -41,24 +36,26 @@ var newsPull = function(searchCityName) {
     var apiKey = "5bfa4270-0651-4c74-bf63-b6dece86fc3e";
     fetch('https://content.guardianapis.com/search?q=' + searchCityName + '&tag=environment/environment&from-date=2014-01-01&api-key=' + apiKey)
     .then((response) => response.json()).then((jsonData) => {
-            console.log(jsonData);
             createDiv(jsonData);
     });
 };
 
-var createDiv = function(jsonData) {
+var createDiv = function(jsonData) {   
+    $(".dynamicEl").remove();
     for(var i=0; i<5; i++) {
         var articleTitle = document.createElement("li");
         articleTitle.id = 'headline' + i;
+        articleTitle.classList.add("dynamicEl");
         articleTitle.innerText = jsonData.response.results[i].webTitle;
 
         var articleLink = document.createElement("a");
         articleLink.id = 'link' + i;
+        articleLink.classList.add("dynamicEl");
         articleLink.href = jsonData.response.results[i].webUrl;
 
         articleLink.append(articleTitle);
         $("#news-list").append(articleLink);
-    } 
+    }
 }
 
 var formSubmitEvent = function(event) {
@@ -67,7 +64,7 @@ var formSubmitEvent = function(event) {
     var searchCityName = $("#searchCity").val().trim();
     cityInfoPull(searchCityName);
     newsPull(searchCityName);
-
+    // createDiv();
 };
 
 $("#searchCityForm").on("submit", function() {

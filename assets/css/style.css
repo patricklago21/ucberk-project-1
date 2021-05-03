@@ -1,8 +1,6 @@
 * {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin: 0;
 }
-
 /* Start Header/Nav-Bar */
 .header {
     background-color: #1d72aa;
@@ -47,3 +45,10 @@ button {
     background-position: center;
 }
 
+.columns {
+    margin: 5px;
+}
+
+.hide {
+    display: none;
+}
