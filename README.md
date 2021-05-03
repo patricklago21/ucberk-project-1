@@ -16,7 +16,7 @@
 <a name="desc"></a>
 ## Description
 
-The Marine Health Spy application is designed to...
+The PAN application is designed to...
 
 <a name="urlz"></a>
 ## Follow The Link:
