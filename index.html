@@ -58,8 +58,8 @@
 
                     <div class="card-content">
                         <div class="content">
-                            <span id="cityName">City</span>
-                            <ul>
+                            <!-- <span id="cityName">City</span> -->
+                            <ul class="statsList">
                                 <li>Water Temperature: <span id="waterTemp">--</span></li>
                                 <li>Air Temperature: <span id="airTemp">--</span></li>
                                 <li>Wind Speed: <span id="windSpeed">--</span></li>
@@ -81,9 +81,10 @@
                         </p>
                     </header>
 
-                    <div class="card-content has-text-centered" id="news-div">
-                        <!-- select this div to show articles -->
-                        <ul id="news-list"></ul>
+                    <div class="card-content" id="news-div">
+                        <div class="content">
+                            <ul id="news-list"></ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -95,7 +96,7 @@
             <div class="class has-background-grey-lighter">
                 <header class="card-header">
                     <p class="card-header-title">
-                        Combined Air and Water Temperature in ºC
+                        Combined Air and Water Temperature in ºC from 1880 to Today
                     </p>
                 </header>
 
