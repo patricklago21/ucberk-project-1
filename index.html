@@ -14,7 +14,7 @@
     <!-- header -->
   <header>
       <div class="header">
-    <nav class="navbar" role="navigation">
+        <nav class="navbar" role="navigation">
         <div class="navbar-start">
             <h1 class="title is-2">Marine Health</h1>
         </div>
@@ -22,12 +22,12 @@
         <div class="navbar-end">
             <h3 class="subtitle is-3">Created by Team PANN</h3>
         </div>
-    </nav>
-    </div>
+        </nav>
+        </div>
   </header>
 
     <!-- hero with search -->
-    <section class="hero is-primary">
+    <section class="hero is-primary has-background-info-dark">
         <div class="hero-body">
             <div class="has-text-centered">
                 <p class="title hero-description">Receive the Lastest Information on Your Coastline's Health</p>
@@ -36,13 +36,11 @@
                 <form id="searchCityForm">
                     <div class="control has-text-centered" id="searchForm">
                         <textarea class="textarea is-primary" placeholder="Search your city here" id="searchCity"></textarea>
+                        <div id="warning" class="has-text-danger warning"></div>
                         <button type="submit" class="button is-primary is-light" id="searchButton">Search</button>
                     </div>
                 </form> 
             </div>
-            <!-- <div class="has-text-centered ul-element">
-                <li>Searched Cities</li>
-            </div> -->
         </div>
     </section>
 
@@ -111,7 +109,7 @@
     </div>  
 
     <hero class="hero is-small is-primary contributors">
-        <div class="hero-body has-text-centered">
+        <div class="hero-body has-text-centered footer-style">
             <p class="title">
                 Contributors:
             </p>
