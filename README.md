@@ -1,4 +1,4 @@
-# Marine Health by PAN
+# Project Aqua Nauticus (PAN) by PAN
 
 ## API's used: 
 ## StormGlass (Marine Weather): https://stormglass.io/marine-weather/
@@ -24,7 +24,7 @@ The Marine Health Spy application is designed to...
 *****************
 
 <a name="demo"></a>
-## Marine Health Spy Demo
+## PAN Demo
 
 *****************
 
