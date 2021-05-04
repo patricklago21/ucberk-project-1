@@ -1,5 +1,7 @@
 # Project Aqua Nauticus (PAN) by PAN
 
+## GitHub Pages Link: https://patricklago21.github.io/ucberk-project-1/
+
 ## API's used: 
 ## StormGlass (Marine Weather): https://stormglass.io/marine-weather/
 ## Gyphy: https://developers.giphy.com/docs/sdk
