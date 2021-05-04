@@ -9,6 +9,7 @@ var cityInfoPull = function(searchCityName) {
                 var lng = response.coord.lon;
 
                 weatherPull(lat, lng);
+                mapp(lat, lng);
             });
         } else {
             $("#warning").text("Please enter a valid city name!");
@@ -56,6 +57,34 @@ var createDiv = function(jsonData) {
         articleLink.append(articleTitle);
         $("#news-list").append(articleLink);
     }
+}
+
+const mymap = L.map('issMap').setView([0, 0], 1);
+
+var mapp = function(lat, lng) {
+    // Making a map and tiles
+    const attribution =
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>';
+    const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+    const tiles = L.tileLayer(tileUrl, { attribution });
+    tiles.addTo(mymap);
+    const marker = L.marker([0,0]).addTo(mymap);
+    let firstTime = true;
+        marker.setLatLng([lat, lng]);
+        if (firstTime) {
+            mymap.setView([ lat, lng], 2);
+            firstTime = false;
+        }
+        var popup = L.popup();
+        function onMapClick(e) {
+            popup
+                .setLatLng(e.latlng)
+                .setContent("You clicked the map at " + e.latlng.toString())
+                .openOn(mymap);
+        }
+        mymap.on('click', onMapClick);
+        document.getElementById('lat').textContent = lat;
+        document.getElementById('lon').textContent = lng;
 }
 
 var formSubmitEvent = function(event) {
