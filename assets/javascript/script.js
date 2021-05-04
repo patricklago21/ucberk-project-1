@@ -63,6 +63,8 @@ const mymap = L.map('issMap').setView([0, 0], 1);
 
 var mapp = function(lat, lng) {
     // Making a map and tiles
+    $(".hidden").removeClass("hidden");
+    mymap.invalidateSize();
     const attribution =
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>';
     const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
