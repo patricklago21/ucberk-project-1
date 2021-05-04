@@ -7,7 +7,18 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Marine Health by PANN</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+    <style>
+        #issMap {
+            height: 360px;
+        }
+    </style>
+    <title>Project Aqua Nauticus by PAN</title>
 </head>
 
 <body>
@@ -16,11 +27,11 @@
       <div class="header">
         <nav class="navbar" role="navigation">
         <div class="navbar-start">
-            <h1 class="title is-2">Marine Health</h1>
+            <h1 class="title is-3">Project Aqua Nauticus</h1>
         </div>
 
         <div class="navbar-end">
-            <h3 class="subtitle is-3">Created by Team PANN</h3>
+            <h3 class="subtitle is-4">&#x1f30a; Created by PAN</h3>
         </div>
         </nav>
         </div>
@@ -30,12 +41,12 @@
     <section class="hero is-primary has-background-info-dark">
         <div class="hero-body">
             <div class="has-text-centered">
-                <p class="title hero-description">Receive the Lastest Information on Your Coastline's Health</p>
+                <p class="subtitle hero-description">Receive the Latest Information About Your Coastline's Health</p>
             </div>
             <div class="field">
                 <form id="searchCityForm">
-                    <div class="control has-text-centered" id="searchForm">
-                        <textarea class="textarea is-primary" placeholder="Search your city here" id="searchCity"></textarea>
+                    <div class="control has-text-centered top-div" id="searchForm">
+                        <input class="input is-primary is-rounded has-text-centered" placeholder="Search your city here" id="searchCity" type="text"></input>
                         <div id="warning" class="has-text-danger warning"></div>
                         <button type="submit" class="button is-primary is-light" id="searchButton">Search</button>
                     </div>
@@ -52,7 +63,7 @@
                 <div class="card has-background-grey-lighter">
                     <header class="card-header">
                         <p class="card-header-title">
-                            Marine Stats
+                            Marine Weather Information
                         </p>
                     </header>
 
@@ -60,10 +71,10 @@
                         <div class="content">
                             <!-- <span id="cityName">City</span> -->
                             <ul class="statsList">
-                                <li>Water Temperature: <span id="waterTemp">--</span></li>
-                                <li>Air Temperature: <span id="airTemp">--</span></li>
-                                <li>Wind Speed: <span id="windSpeed">--</span></li>
-                                <li>Visibility <span id="visibility">--</span></li>
+                                <li class="has-text-info-dark">Water Temperature: <span id="waterTemp" class="has-text-info-dark">--</span></li>
+                                <li class="has-text-warning-dark">Air Temperature: <span id="airTemp" class="has-text-warning-dark">--</span></li>
+                                <li class="has-text-success-dark">Wind Speed: <span id="windSpeed" class="has-text-success-dark">--</span></li>
+                                <li class="has-text-primary-dark">Visibility <span id="visibility" class="has-text-primary-dark">--</span></li>
                             </ul>
                         </div>
                     </div>
@@ -77,7 +88,7 @@
                 <div class="card has-background-grey-lighter">
                     <header class="card-header">
                         <p class="card-header-title">
-                            Current News
+                            Current Environmental News
                         </p>
                     </header>
 
@@ -96,7 +107,7 @@
             <div class="class has-background-grey-lighter">
                 <header class="card-header">
                     <p class="card-header-title">
-                        Combined Air and Water Temperature in ºC from 1880 to Today
+                        Combined Air and Water Temperature in ºC from Year 1880 to Year 2020
                     </p>
                 </header>
 
@@ -109,14 +120,30 @@
         </div>
     </div>  
 
+    <div class="columns">
+        <div class="column is-full">
+            <div class="class has-background-grey-lighter">
+                <section class="mapp">
+                    <header class="card-header">
+                        <p class="card-header-title">
+                            City Location on Map
+                        </p>
+                    </header>
+
+                    <div class="card-content">
+                        <p class="latlong">latitude: <span id="lat"></span>°<br/>
+                            longitude: <span id="lon"></span>°
+                        </p>
+                        <div id="issMap"></div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>  
+
     <hero class="hero is-small is-primary contributors">
         <div class="hero-body has-text-centered footer-style">
-            <p class="title">
-                Contributors:
-            </p>
-            <p class="subtitle">
-                Abel Martinez, Nell-E Medina, Patrick Lago
-            </p>
+            <strong>PAN by Patrick Lago | Abel Martinez | Nell-e Medina</strong>
         </div>
     </hero>
     

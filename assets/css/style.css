@@ -7,7 +7,7 @@
     padding: 10px 25px;
 }
 
-.title.is-2 {
+.title.is-3 {
     color:  white; 
     padding-top: 10px 215px;
     font-size: 40px;
@@ -36,7 +36,7 @@ button {
 }
 
 .footer-style {
-    background-image: url("../images/hero.jpg");
+    background-image: url(/assets/images/heroe.png);
     background-size: cover;
     background-position: center;
 }
@@ -47,4 +47,8 @@ button {
 
 .statsList {
     list-style: none;
+}
+
+.top-div {
+    padding: 0px 20%;
 }

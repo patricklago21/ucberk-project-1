@@ -13,8 +13,8 @@ async function chartIt() {
                         label: 'Combined Land-Surface Air and Sea-Surface Water Temperature in C°',
                         data: ytemps,
                         fill: false,
-                        backgroundColor: 'rgba(128,128,0, 1)',
-                        borderColor: 'rgba(0,128,0, 1)',
+                        backgroundColor: 'rgba(255, 203, 5, 1)',
+                        borderColor: 'rgba(128, 0, 128, 1)',
                         borderWidth: 1
                     }
                 ]
