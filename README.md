@@ -79,7 +79,8 @@ THEN the article with relevance to the searched city will display on a new tab.
 <a name="ref"></a>
 ## REFERENCES
 
--https://data.giss.nasa.gov/gistemp/
+- NASA GISS link where historical data was obtained: https://data.giss.nasa.gov/gistemp/
+- Chart Library: https://www.chartjs.org/
 
 
 
