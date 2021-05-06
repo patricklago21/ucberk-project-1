@@ -5,6 +5,8 @@
 3. [ PAN Demo ](#demo)
 4. [ User Story. ](#story)
 5. [ User Acceptance. ](#ac)
+6. [ API Used. ](#api)
+7. [ REFERENCE. ](#ref)
 
 ## Presentation: https://drive.google.com/file/d/1lJCCZi-5PSRKZP-35faidpwi9U14VTCl/view?usp=sharing
 
@@ -67,12 +69,18 @@ WHEN I click an article
 
 THEN the article with relevance to the searched city will display on a new tab.
 
+<a name="api"></a>
 ## API's used: 
 - StormGlass (Marine Weather): https://stormglass.io/marine-weather/
 - OpenWeather (For Geo Location): https://openweathermap.org/
 - Guardian (Current News): https://open-platform.theguardian.com/
+- Leaflet.js (Map): https://leafletjs.com/
 
+<a name="ref"></a>
 ## REFERENCES
+
+-https://data.giss.nasa.gov/gistemp/
+
 
 
 
