@@ -29,7 +29,11 @@ PAN depends on the city/ world city provided by the user and from that, will pul
 *****************
 
 <a name="demo"></a>
-## PAN Demo
+## Project Screenshots 
+<img src="https://raw.githubusercontent.com/patricklago21/ucberk-project-1/main/assets/images/Screen%20Shot%202021-05-05%20at%206.04.55%20PM.png"/>
+<img src="https://raw.githubusercontent.com/patricklago21/ucberk-project-1/main/assets/images/Screen%20Shot%202021-05-05%20at%206.05.23%20PM.png"/>
+<img src="https://raw.githubusercontent.com/patricklago21/ucberk-project-1/main/assets/images/Screen%20Shot%202021-05-05%20at%206.05.33%20PM.png"/>
+<img src="https://raw.githubusercontent.com/patricklago21/ucberk-project-1/main/assets/images/Screen%20Shot%202021-05-05%20at%206.05.48%20PM.png"/>
 
 *****************
 
