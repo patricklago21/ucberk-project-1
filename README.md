@@ -46,18 +46,18 @@ SO THAT I can help spread awareness on the health of the world and find ways to 
 
 GIVEN I wanted to know the conditions of the oceans across the globe
 
-WHEN I access the Marine Weatherer application
+WHEN I access the Project Aqua Nauticus (PAN) application
 
-THEN the current marine conditions for a specific country will display
+THEN the current marine conditions for a specific city or world city will display
 
-WHEN I input a different country
+WHEN I input a different city
 
-THEN I am presented with the marine conditions in the borders or near that country
+THEN I am presented with the marine conditions in the borders or near that city
 
-WHEN I view the map and select a button 
+WHEN I input the city I wanted to search
 
-THEN it displays a selection of current news and articles about the marine conditions will display
+THEN it displays a selection of current weather news and articles in relevance to the city inputted. 
 
-WHEN I click the button for the country that I have as input 
+WHEN I click an article 
 
-THEN the interactive map displays with highlights on neighboring countries close to the marine highlights
+THEN the article with relevance to the searched city will display on a new tab.
