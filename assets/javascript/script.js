@@ -1,3 +1,8 @@
+var cityRender = function(searchCityName) {
+    updateSearchHistory(searchCityName);
+    cityInfoPull(searchCityName);
+};
+
 var cityInfoPull = function(searchCityName) {
     fetch('https://api.openweathermap.org/data/2.5/weather?q=' + searchCityName + '&appid=b4e179a8b169927bbbf8d46d7054d6b7')
     .then (function(response) {
@@ -8,10 +13,14 @@ var cityInfoPull = function(searchCityName) {
                 var lat = response.coord.lat;
                 var lng = response.coord.lon;
 
+                newsPull(searchCityName);
                 weatherPull(lat, lng);
                 mapp(lat, lng);
             });
         } else {
+            var searchHistory = JSON.parse(localStorage.getItem("searchHistory"));
+            searchHistory = searchHistory.filter((c,i)=> i === 0)
+            localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
             $("#warning").text("Please enter a valid city name!");
         }
     });
@@ -21,7 +30,7 @@ var weatherPull = function(lat, lng) {
     var params = "waterTemperature,windSpeed,airTemperature,visibility"
     fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}`, {
     headers: {
-    'Authorization': '89c81292-a891-11eb-80d0-0242ac130002-89c8130a-a891-11eb-80d0-0242ac130002'
+    'Authorization': '7503cf1c-adec-11eb-9cd1-0242ac130002-7503cf8a-adec-11eb-9cd1-0242ac130002'
     }
     }).then((response) => response.json()).then((jsonData) => {
         $("#windSpeed").text(jsonData.hours[12].windSpeed.noaa + " m/s")
@@ -55,6 +64,7 @@ var createDiv = function(jsonData) {
         articleLink.href = jsonData.response.results[i].webUrl;
 
         articleLink.append(articleTitle);
+        articleLink.setAttribute("target", "_blank");
         $("#news-list").append(articleLink);
     }
 }
@@ -93,11 +103,45 @@ var formSubmitEvent = function(event) {
     event.preventDefault();
 
     var searchCityName = $("#searchCity").val().trim();
-    cityInfoPull(searchCityName);
-    newsPull(searchCityName);
+    cityRender(searchCityName);
     // createDiv();
 };
 
 $("#searchCityForm").on("submit", function() {
     formSubmitEvent(event);
 });
+
+var buildSearchHistory = function() {
+    var searchHistory = JSON.parse(localStorage.getItem("searchHistory"));
+    if (searchHistory == null) {
+        searchHistory = [];
+        localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+    }
+    var searchHistory2 = [...new Set(searchHistory)];
+    searchHistory2 = searchHistory2.filter(c => c.trim());
+    if (searchHistory.length > searchHistory2.length) {
+        localStorage.setItem("searchHistory", JSON.stringify(searchHistory2));
+        return;
+    }
+    var groupContainer = $(".cityhistory");
+    groupContainer.html("");
+    for (i in searchHistory) {
+        var optionEl = $("<option>")
+                .addClass("list-group-item list-group-item-action")
+                .val(searchHistory[i])
+                .text(searchHistory[i])
+                groupContainer.append(optionEl);        
+    }
+    groupContainer.on("click", (e)=>cityInfoPull(e.target.value))
+};
+var updateSearchHistory = function(city) {
+    // var searchHistory = JSON.parse(localStorage.getItem("searchHistory"));
+    var searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || []
+    searchHistory.unshift(city);
+    if (searchHistory > 5) {
+        searchHistory.pop();
+    }
+    localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+    buildSearchHistory();
+}
+buildSearchHistory();
