@@ -6,7 +6,7 @@
 4. [ User Story. ](#story)
 5. [ User Acceptance. ](#ac)
 6. [ API Used. ](#api)
-7. [ REFERENCE. ](#ref)
+7. [ Reference. ](#ref)
 
 ## Presentation: https://drive.google.com/file/d/1lJCCZi-5PSRKZP-35faidpwi9U14VTCl/view?usp=sharing
 
