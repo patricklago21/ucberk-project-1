@@ -1,9 +1,10 @@
 # Project Aqua Nauticus (PAN) by PAN
 
-## API's used: 
-## StormGlass (Marine Weather): https://stormglass.io/marine-weather/
-## OpenWeather (For Geo Location): https://openweathermap.org/
-## Guardian (Current News): https://open-platform.theguardian.com/
+1. [ Description. ](#desc)
+2. [ Follow the Link. ](#urlz)
+3. [ PAN Demo ](#demo)
+4. [ User Story. ](#story)
+5. [ User Acceptance. ](#ac)
 
 ## Presentation: https://drive.google.com/file/d/1lJCCZi-5PSRKZP-35faidpwi9U14VTCl/view?usp=sharing
 
@@ -65,3 +66,14 @@ THEN it displays a selection of current weather news and articles in relevance t
 WHEN I click an article 
 
 THEN the article with relevance to the searched city will display on a new tab.
+
+## API's used: 
+- StormGlass (Marine Weather): https://stormglass.io/marine-weather/
+- OpenWeather (For Geo Location): https://openweathermap.org/
+- Guardian (Current News): https://open-platform.theguardian.com/
+
+## REFERENCES
+
+
+
+
