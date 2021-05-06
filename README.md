@@ -1,12 +1,12 @@
 # Project Aqua Nauticus (PAN) by PAN
 
-1. [ Description. ](#desc)
-2. [ Follow the Link. ](#urlz)
+1. [ Description ](#desc)
+2. [ Follow the Link ](#urlz)
 3. [ PAN Demo ](#demo)
-4. [ User Story. ](#story)
-5. [ User Acceptance. ](#ac)
-6. [ API Used. ](#api)
-7. [ Reference. ](#ref)
+4. [ User Story ](#story)
+5. [ User Acceptance ](#ac)
+6. [ API Used ](#api)
+7. [ Reference ](#ref)
 
 ## Presentation: https://drive.google.com/file/d/1lJCCZi-5PSRKZP-35faidpwi9U14VTCl/view?usp=sharing
 
