@@ -10,7 +10,18 @@
 <a name="desc"></a>
 ## Description
 
-The PAN application is designed to...
+The PAN application is designed to provide weather information about a city's coastline. It was designed to provide robust data to environmentalists, marine biologists, and including individuals who are concerned about the wellness of their marine environment. 
+
+PAN provides the following marine weather forecast information:
+
+  - Water Temperature
+  - Air Temperature
+  - Wind Speed
+  - Visibility
+
+PAN also displays a combined data for land surface air temperature and water surface temperature from the year 1880 to the year 2020 pulled out of NASA GISS.
+
+PAN depends on the city/ world city provided by the user and from that, will pull relevant marine information. It also provides the user relevant weather or environmental news regarding the city and be able to look up articles.
 
 <a name="urlz"></a>
 ## Follow The Link: https://patricklago21.github.io/ucberk-project-1/
